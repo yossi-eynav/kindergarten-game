@@ -8,8 +8,8 @@
 <form>
   <mat-form-field class="example-full-width">
     <mat-select placeholder="Select a Kid"[formControl]="formControl">
-      <mat-option *ngFor="let kid of kids" [value]="kid.firstName">
-        <small>{{kid.firstName}} {{kid.lastName}} </small>
+      <mat-option *ngFor="let kid of kids" [value]="kid">
+        <small>{{kid.firstName}} {{kid.lastName}}</small>
       </mat-option>
     </mat-select>
   </mat-form-field>
