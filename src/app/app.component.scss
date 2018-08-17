@@ -1,0 +1,21 @@
+img.kid-image {
+  width: 100%;
+  height: 350px;
+  object-fit: contain;
+}
+
+p, h1, h2 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+form {
+  mat-form-field {
+    width: 100%;
+  }
+
+}
+
+
+.progress {
+  margin-top: 10px;
+}
