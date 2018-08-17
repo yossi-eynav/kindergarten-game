@@ -29,27 +29,31 @@ export class AppComponent implements  OnInit {
 
   nextSlide() {
     if(this.currentItem === this.kids.length - 1) {
-      this.snake.open('You completed the game!, see you next time!', null, { duration: 20000 })
+      const snake = this.snake.open('You completed the game!, see you next time!', 'Play Again', { duration: 20000 });
+      snake.onAction().subscribe(() => {
+        window.location.reload();
+      });
+
       this.setProgress(100);
     } else {
       this.currentItem++;
       this.setProgress((100 / this.kids.length) * this.currentItem);
       this.formControl.setValue('');
-      this.snake.open('Success! switching to the next slide', null, { duration: 3000 })
+      this.snake.open('Success! switching to the next slide', null, { duration: 5000 })
     }
   }
 
   ngOnInit(): void {
     this.formControl.valueChanges.subscribe((value) => {
       if(!value) {
-        this.snake.open('Please enter a name before continuing further.', null, { duration: 3000 })
+        this.snake.open('Please enter a name before continuing further.', null, { duration: 5000 })
       }
 
       if(value.trim() === this.getCurrentItem().firstName) {
         this.nextSlide();
 
       } else {
-        this.snake.open('Wrong name, you can do better', null, { duration: 3000 });
+        this.snake.open('Wrong name, you can do better', null, { duration: 5000 });
       }
     })
   }
