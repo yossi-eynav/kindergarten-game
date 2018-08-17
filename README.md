@@ -1,5 +1,8 @@
-## Build
+## local development:
+1. `npm install`
+2. `npm run start`
 
+## Build for production
 run ```ng build --deploy-url https://your-deploy-url.com/folder --prod```
 
 ## Data
